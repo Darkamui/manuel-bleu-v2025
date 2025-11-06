@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Titillium_Web } from "next/font/google";
 import "../globals.css";
 import { i18n, type Locale } from "@/i18n-config";
+import { Analytics } from "@/components/analytics";
 
 const titillium = Titillium_Web({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default async function RootLayout(
   return (
     <html lang={lang}>
       <body className={`${titillium.variable} antialiased`}>{children}</body>
+      <Analytics />
     </html>
   );
 }
