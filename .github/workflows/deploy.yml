@@ -31,6 +31,9 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/manuelbleu2025:latest
+          build-args: |
+            NEXT_PUBLIC_GA_MEASUREMENT_ID=${{ secrets.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
+            NEXT_PUBLIC_SITE_URL=https://manuelbleu.com
 
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v0.1.10
